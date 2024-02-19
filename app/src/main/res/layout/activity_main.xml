@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.main.MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/toolbar"
+        app:title="Cancer Detector"
+        app:titleCentered="true"
+        app:titleTextColor="@color/red"
+        app:subtitle="Check your skin condition"
+        app:subtitleCentered="true"
+        app:subtitleTextColor="@color/red"
+        app:titleTextAppearance="@style/TextAppearance.Material3.ActionBar.Title"
+        app:subtitleTextAppearance="@style/TextAppearance.Material3.ActionBar.Subtitle"/>
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/previewImageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/galleryButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:srcCompat="@drawable/ic_place_holder"
+        android:contentDescription="@string/sample_from_gallery"
+        app:round="16dp"
+        app:crossfade="@integer/material_motion_duration_short_2"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_corner"
+        android:maxHeight="450dp"/>
+
+    <Button
+        android:id="@+id/galleryButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/gallery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/analyzeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Widget.Material3.Button.IconButton.Filled"/>
+
+    <Button
+        android:id="@+id/analyzeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/analyze"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:drawableEnd="@drawable/baseline_arrow_forward_ios_24"
+        android:drawableTint="@color/red"
+        style="@style/Widget.Material3.Button.TextButton"
+        />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/galleryButton"
+        app:layout_constraintBottom_toBottomOf="@id/galleryButton"
+        app:layout_constraintTop_toTopOf="@id/galleryButton"
+        android:id="@+id/progressIndicator"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

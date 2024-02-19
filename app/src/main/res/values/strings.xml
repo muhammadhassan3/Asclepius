@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Asclepius</string>
+    <string name="gallery">Pilih Gambar</string>
+    <string name="analyze">Periksa</string>
+    <string name="result">Hasil Analisis:\n<b>%s</b></string>
+    <string name="cannot_classify_image">Gagal memproses gambar</string>
+    <string name="empty_image">Kamu belum memilih gambar</string>
+    <string name="sample_from_gallery">Sampel dari galeri</string>
+    <string name="show_articles">Lihat Artikel</string>
+    <string name="no_data_found">Tidak ada data yang ditemukan</string>
+    <string name="history">Riwayat</string>
+</resources>

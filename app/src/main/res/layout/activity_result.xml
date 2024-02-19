@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".view.result.ResultActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Hasil Diagnosa"
+        app:titleTextColor="@color/white"
+        app:titleCentered="true"
+        app:navigationIcon="@drawable/baseline_arrow_back_ios_24"/>
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/sample_from_gallery"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/articlesButton"
+        app:srcCompat="@drawable/ic_place_holder"
+        app:round="16dp"
+        app:crossfade="@integer/material_motion_duration_medium_2"
+        android:background="@drawable/rounded_corner"
+        android:adjustViewBounds="true"
+        android:maxHeight="400dp"
+        android:id="@+id/resultImage"/>
+    <ImageButton
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/circled_side"
+        android:id="@+id/articlesButton"
+        android:contentDescription="@string/show_articles"
+        app:srcCompat="@drawable/baseline_article_24"
+        android:scaleType="fitXY"
+        android:padding="12dp"/>
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circled_side"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/result"
+        app:layout_constraintBottom_toBottomOf="@id/progressScore"
+        app:layout_constraintTop_toTopOf="@id/progressScore"
+        app:layout_constraintEnd_toStartOf="@id/progressScore"
+        app:layout_constraintStart_toEndOf="@id/articlesButton"
+        android:textAlignment="center"
+        android:id="@+id/resultText"/>
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/circled_side"
+        android:layout_margin="16dp"
+        android:id="@+id/progressScore"
+        app:indicatorSize="65dp"
+        app:indicatorDirectionCircular="clockwise"
+        tools:progress="80"
+        style="@style/Widget.Material3.CircularProgressIndicator" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/progressScore"
+        app:layout_constraintEnd_toEndOf="@id/progressScore"
+        app:layout_constraintStart_toStartOf="@id/progressScore"
+        app:layout_constraintBottom_toBottomOf="@id/progressScore"
+        tools:text="57.5"
+        android:textStyle="bold"
+        android:id="@+id/score"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
